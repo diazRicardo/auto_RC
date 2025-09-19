@@ -8,11 +8,11 @@ module dual_motors(
     );
     
     // 5-bit states
-    localparam FORWARD = 5'b00001;
-    localparam BACKWARD = 5'b00010;
-    localparam LEFT = 5'b00100;
-    localparam RIGHT = 5'b01000;
-    localparam STOP = 5'b10000;
+    localparam FORWARD   = 5'b00001;  // State 0
+    localparam IDLE      = 5'b00010;  // State 1  
+    localparam BACKWARD  = 5'b00100;  // state 2
+    localparam LEFT      = 5'b01000;  // state 3
+    localparam RIGHT     = 5'b10000;  // State 4
     
     //  Main motor control
     always @(posedge clk_125mhz) begin
@@ -22,33 +22,37 @@ module dual_motors(
         
             case (direction)
                 FORWARD: begin
-                    in[1] <= 1;
-                    in[2] <= 0;
-                    in[3] <= 1;
-                    in[4] <= 0;
-                end
-                
-                BACKWARD: begin
+//                    in[1] <= 1;
+//                    in[2] <= 0;
+//                    in[3] <= 1;
+//                    in[4] <= 0;
                     in[1] <= 0;
                     in[2] <= 1;
                     in[3] <= 0;
                     in[4] <= 1;
                 end
                 
-                STOP: begin
+                BACKWARD: begin
+                    in[1] <= 1;
+                    in[2] <= 0;
+                    in[3] <= 1;
+                    in[4] <= 0;
+                end
+                
+                IDLE: begin
                     in <= 0;
                 end
                 
                 LEFT: begin
                     in[1] <= 0;
                     in[2] <= 0;
-                    in[3] <= 1;
-                    in[4] <= 0;
+                    in[3] <= 0;
+                    in[4] <= 1;
                 end
                 
                 RIGHT: begin
-                    in[1] <= 1;
-                    in[2] <= 0;
+                    in[1] <= 0;
+                    in[2] <= 1;
                     in[3] <= 0;
                     in[4] <= 0;
                 end

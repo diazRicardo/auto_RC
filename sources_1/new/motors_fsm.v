@@ -2,7 +2,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 // MEALY STATE MACHINE 
-// Controls the directions of the motors based on timer and obstacle inputs
+// Controls the directions of the motors based on timer expire and obstacle inputs
 // Directions: FORWARD, BACKWARD, LEFT, RIGHT, IDLE (STOP)
 
 module motors_fsm(
@@ -11,7 +11,7 @@ module motors_fsm(
     input obstacle,
     input timer_expire,
     output reg start_timer,
-    output reg [4:0] direction  // outputs of this state machine is the current state
+    output reg [4:0] direction  // direction == current state
     );
     
     // State definitions (one-hot encoding)

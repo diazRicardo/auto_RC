@@ -6,7 +6,7 @@ module top(
     input jc6,
     output jc7,
     output [6:0] je,
-    output [10:0] jd,
+    output [7:0] jd,
     output [3:0] led
     );
     

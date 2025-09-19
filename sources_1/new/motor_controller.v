@@ -5,7 +5,7 @@ module motor_controller(
     input clk,
     input reset,
     input [15:0] distance_front,
-    output reg [4:0] direction
+    output [4:0] direction
     );
         
 //    localparam FORWARD = 5'b00001;
@@ -15,12 +15,12 @@ module motor_controller(
 //    localparam STOP = 5'b10000;
     
     // Timer signals
-    reg start_timer;
-    wire timer_expired;
+    wire start_timer;   // output from motor_fsm, input to timer
+    wire timer_expired; // output from timer, input to motor_fsm
     
     // Instantiate the timer with 50ms buffer
     timer #(
-        .TIMER_COUNTS(6250000)   // 50ms at 125MHz
+        .TIMER_COUNTS(16777215)   // 50ms at 125MHz
     ) direction_timer (
         .clk(clk),
         .reset(reset),
@@ -30,7 +30,7 @@ module motor_controller(
  
     // Input for FSM
     wire obstacle;
-    assign obstacle = (distance_front >= 16'd3);
+    assign obstacle = (distance_front <= 16'd13);
     
     motors_fsm motor_machine (
         .clkin(clk),

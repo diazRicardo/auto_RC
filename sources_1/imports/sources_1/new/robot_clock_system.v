@@ -2,7 +2,7 @@
 
 
 // Main clock system for HC-SR04 robot project
-// For Zybo Z7 board with 125MHz input clock from Ethernet PHY
+// For Zybo Z7 board with 125MHz input clock
 
 module robot_clock_system(
     input wire clk_125mhz,      // 125MHz system clock (Zybo Z7)
@@ -12,7 +12,7 @@ module robot_clock_system(
     output wire clk_1mhz        // 1MHz clock for microsecond timing
 );
 
-    parameter CLOCK_FREQ = 125_000_000;  // 125MHz input clock (Zybo Z7)
+    parameter CLOCK_FREQ = 125_000_000;  // 125MHz input clock
     
     // Clock divider instances
     clock_divider #(.INPUT_FREQ(CLOCK_FREQ), .OUTPUT_FREQ(1_000_000)) 
