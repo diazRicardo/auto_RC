@@ -5,7 +5,8 @@ module motor_controller(
     input clk,
     input reset,
     input [15:0] distance_front,
-    output [4:0] direction
+    output [4:0] direction,
+    output pwm_signal
     );
         
 //    localparam FORWARD = 5'b00001;

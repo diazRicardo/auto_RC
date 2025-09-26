@@ -125,12 +125,15 @@ module top(
         
     // Dual_motors directly connected to motor_controller instance
     wire [4:1] in;
+    wire enA, enB;
     
     dual_motors front (
         .clk_125mhz(clkin_buf),
         .reset(reset),
         .direction(direction),          // Connect direction to motor_controller output
-        .in(in)
+        .in(in),
+        .enA(enA),
+        .enB(enB)
     );
     
     assign jd[7] = in[1];
