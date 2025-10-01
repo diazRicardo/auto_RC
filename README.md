@@ -16,6 +16,7 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 - Obstacle detection using HC-SR04 ultrasonic sensor
 - Two finite state machines (FSMs) for control and navigation
 - Real-time testing and debugging with FPGA hardware
+- Seven-seg display module (for initial sensor debugging)
 
 ---
 
