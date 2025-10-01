@@ -38,11 +38,13 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 
 ├── /test # Testbenches & simulation outputs
 
-├── /docs # Detailed documentation
-
 ├── /images # Diagrams, schematics, photos
 
 └── README.md # This file
+
+## File Authors
+All work is original, with the exception of:
+- labCnt_clks.v (Author: Dustin Richmond, Assistant Professor, Department of Computer Science and Engineering, Baskin School of Engineering, UC Santa Cruz)
 
 ## 🧩 Lessons Learned
 - Importance of modular design for debugging
