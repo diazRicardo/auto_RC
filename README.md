@@ -1,6 +1,6 @@
 # 🚗 FPGA RC Car Project
 
-An FPGA-based remote-controlled car built with Verilog, featuring motor control, state machine logic, and real-time hardware verification.  
+An FPGA-based sensor-controlled car built with Verilog, featuring motor control, state machine logic, and real-time hardware verification.  
 Designed as a hands-on embedded systems project to explore hardware acceleration, digital design, and system integration.
 
 ---
