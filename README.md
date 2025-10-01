@@ -52,8 +52,6 @@ All work is original, with the exception of:
 - Writing reusable testbenches to validate FSM behavior
 
 ## 🔮 Future Work
-Improve autonomous navigation mode (via redesigning the FSM controlling the motors)
-
-Add two more HC-SR04 sensors to improve obstacle detection
-
-Optimize resource usage for larger FPGA boards
+- Improve autonomous navigation mode (via redesigning the FSM controlling the motors)
+- Add two more HC-SR04 sensors to improve obstacle detection
+- Optimize resource usage for larger FPGA boards
