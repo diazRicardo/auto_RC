@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="6.450666672 ms"></ZoomEndTime>
+      <Cursor1Time time="0.000000000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="193"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/top_testbench/clkin" type="logic">
+      <obj_property name="ElementShortName">clkin</obj_property>
+      <obj_property name="ObjectShortName">clkin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/btn" type="array">
+      <obj_property name="ElementShortName">btn[3:0]</obj_property>
+      <obj_property name="ObjectShortName">btn[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/jc6" type="logic">
+      <obj_property name="ElementShortName">jc6</obj_property>
+      <obj_property name="ObjectShortName">jc6</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/jc7" type="logic">
+      <obj_property name="ElementShortName">jc7</obj_property>
+      <obj_property name="ObjectShortName">jc7</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/distance_front" type="array">
+      <obj_property name="ElementShortName">distance_front[15:0]</obj_property>
+      <obj_property name="ObjectShortName">distance_front[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/current_state" type="array">
+      <obj_property name="ElementShortName">current_state[6:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[6:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/acc/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/acc/accelerated" type="logic">
+      <obj_property name="ElementShortName">accelerated</obj_property>
+      <obj_property name="ObjectShortName">accelerated</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/acc/accelerator_active" type="logic">
+      <obj_property name="ElementShortName">accelerator_active</obj_property>
+      <obj_property name="ObjectShortName">accelerator_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/direction_timer/expired" type="logic">
+      <obj_property name="ElementShortName">expired</obj_property>
+      <obj_property name="ObjectShortName">expired</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/direction_timer/timer_running" type="logic">
+      <obj_property name="ElementShortName">timer_running</obj_property>
+      <obj_property name="ObjectShortName">timer_running</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/direction_timer/TIMER_COUNTS" type="array">
+      <obj_property name="ElementShortName">TIMER_COUNTS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TIMER_COUNTS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/acc_pwm_signal" type="logic">
+      <obj_property name="ElementShortName">acc_pwm_signal</obj_property>
+      <obj_property name="ObjectShortName">acc_pwm_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/dec_pwm_signal" type="logic">
+      <obj_property name="ElementShortName">dec_pwm_signal</obj_property>
+      <obj_property name="ObjectShortName">dec_pwm_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/pwm_signal" type="logic">
+      <obj_property name="ElementShortName">pwm_signal</obj_property>
+      <obj_property name="ObjectShortName">pwm_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/obstacle" type="logic">
+      <obj_property name="ElementShortName">obstacle</obj_property>
+      <obj_property name="ObjectShortName">obstacle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/timer_expire" type="logic">
+      <obj_property name="ElementShortName">timer_expire</obj_property>
+      <obj_property name="ObjectShortName">timer_expire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/accelerated" type="logic">
+      <obj_property name="ElementShortName">accelerated</obj_property>
+      <obj_property name="ObjectShortName">accelerated</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/decelerated" type="logic">
+      <obj_property name="ElementShortName">decelerated</obj_property>
+      <obj_property name="ObjectShortName">decelerated</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/start_timer" type="logic">
+      <obj_property name="ElementShortName">start_timer</obj_property>
+      <obj_property name="ObjectShortName">start_timer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/start_acc" type="logic">
+      <obj_property name="ElementShortName">start_acc</obj_property>
+      <obj_property name="ObjectShortName">start_acc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/uut/controller/motor_machine/start_dec" type="logic">
+      <obj_property name="ElementShortName">start_dec</obj_property>
+      <obj_property name="ObjectShortName">start_dec</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/jc4" type="logic">
+      <obj_property name="ElementShortName">jc4</obj_property>
+      <obj_property name="ObjectShortName">jc4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/jc5" type="logic">
+      <obj_property name="ElementShortName">jc5</obj_property>
+      <obj_property name="ObjectShortName">jc5</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_testbench/jd" type="array">
+      <obj_property name="ElementShortName">jd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jd[7:0]</obj_property>
+   </wvobject>
+</wave_config>
