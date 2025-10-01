@@ -21,7 +21,11 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 ---
 
 ## 🖼️ System Overview
-![System Block Diagram](images/system_block_diagram.PNG)
+Top level schematic
+![Top Level Diagram](images/system_block_diagram.PNG)
+
+Motor FSM Diagram
+![Motor FSM Diagram](images/Motor_FSM_Diagram.png)
 
 ---
 
