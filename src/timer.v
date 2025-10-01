@@ -3,8 +3,9 @@
 module timer (
     input wire clk,
     input wire reset,
-    input wire start,           // pulse high to start timer
-    output reg expired          // goes high when timer expires
+    input wire start,           // Pulse high to start timer
+    output reg timer_active,
+    output reg expired          // Goes high when timer expires
 );
 
     // Timer parameters for 125MHz clock

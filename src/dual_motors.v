@@ -4,6 +4,7 @@ module dual_motors(
     input wire clk_125mhz,
     input wire reset,
     input wire [6:0] direction,
+    input wire pwm_signal,
     output reg [4:1] in,
     output reg enA,
     output reg enB
@@ -34,11 +35,22 @@ module dual_motors(
                     in[4] <= 1;
                 end 
                 
+                DEC: begin
+                    enA <= pwm_signal;
+                    enB <= pwm_signal;
+                    in[1] <= 1;
+                    in[2] <= 0;
+                    in[3] <= 1;
+                    in[4] <= 0;
+                end 
+                
                 FORWARD: begin
 //                    in[1] <= 1;
 //                    in[2] <= 0;
 //                    in[3] <= 1;
 //                    in[4] <= 0;
+                    enA <= 1;
+                    enB <= 1;
                     in[1] <= 0;
                     in[2] <= 1;
                     in[3] <= 0;
@@ -79,7 +91,7 @@ module dual_motors(
                 end
                     
                 default: begin
-                    enA <= 1;
+                    enA <= 0;
                     enB <= 0;
                     in <= 0;
                 end

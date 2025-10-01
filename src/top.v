@@ -4,6 +4,8 @@ module top(
     input clkin, 
     input [3:0] btn,
     input jc6,
+    output jc4, 
+    output jc5,
     output jc7,
     output [6:0] je,
     output [7:0] jd,
@@ -34,8 +36,6 @@ module top(
     wire [15:0] distance_left;
     wire [15:0] distance_right;
     
-    wire mr_md, mr_left, mr_right;
-        
     hc_sr04_interface front_sensor(
         .clk_125mhz(clkin_buf),
         .clk_1mhz(clk_1mhz), 
@@ -104,36 +104,40 @@ module top(
     selector sel (.N_i(dec_to_hex), .sel_i(ring_output), .H_o(to_decimal));
     
     // Seven seg instance 
-    // ... Segment signals to JE Pmod ports
+    // Segment signals to JE Pmod ports
     hex7seg sev_seg (.n(to_decimal), .seg(je)); 
     
-    // ... Anode signals sent to JD Pmod ports
+    // Anode signals sent to JD Pmod ports
     assign jd[3] = ~ring_output[0];
     assign jd[2] = ~ring_output[1];
     assign jd[1] = ~ring_output[2];
     assign jd[0] = ~ring_output[3];
     
-    // Motor controller instance drives motors via motor state machine
-    wire [4:0] direction;
+    // Motor controller instance drives motors via motor FSM
+    wire [6:0] direction;
+    wire pwm;
     
     motor_controller controller (
         .clk(clkin_buf),
+        .clk_1mhz(clk_1mhz),
         .reset(reset),
         .distance_front(last_valid_distance),
-        .direction(direction)
+        .direction(direction),
+        .idle_timer_active(led[0]),
+        .pwm_signal(pwm)
     );
         
     // Dual_motors directly connected to motor_controller instance
     wire [4:1] in;
-    wire enA, enB;
     
     dual_motors front (
         .clk_125mhz(clkin_buf),
         .reset(reset),
         .direction(direction),          // Connect direction to motor_controller output
+        .pwm_signal(pwm),
         .in(in),
-        .enA(enA),
-        .enB(enB)
+        .enA(jc4),
+        .enB(jc5)
     );
     
     assign jd[7] = in[1];
@@ -142,10 +146,10 @@ module top(
     assign jd[4] = in[4];
 
     // Debug lines to see whats happening
-    assign led[3] = mr;                    // Should blink when measurements are ready
-    assign led[2] = (distance_front != 16'hFFFF); // ON if reading is not FFFF
-    assign led[1] = (distance_front >= 16'd1); // ON if >= 2cm
-    assign led[0] = (distance_front <= 16'd400); // ON if <= 100cm
+    assign led[3] = direction == 7'b0000001;    // FORWARD
+    assign led[2] = direction == 7'b0000010;   // IDLE
+    assign led[1] = direction == 7'b0010000;    // RIGHT
+    assign led[0] = direction == 7'b0100000;  // ACC
    
   
 endmodule

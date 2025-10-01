@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-
-// MEALY STATE MACHINE 
+// MEALY STATE MACHINE
+ 
 // Controls the directions of the motors based on timer expire and obstacle inputs
-// Directions: FORWARD, BACKWARD, LEFT, RIGHT, IDLE (STOP)
+// Directions: ACC, DEC, FORWARD, BACKWARD, LEFT, RIGHT, IDLE (STOP)
 
 module motors_fsm(
     input clkin,
@@ -13,7 +13,8 @@ module motors_fsm(
     input accelerated,
     input decelerated,
     output reg start_timer,     // Two outputs, along with current state (direction)
-    output reg start_milli_timer,
+    output reg start_acc,
+    output reg start_dec,
     output reg [6:0] direction  
     );
     
@@ -26,14 +27,17 @@ module motors_fsm(
     localparam ACC       = 7'b0100000;  // State 5
     localparam DEC       = 7'b1000000;  // State 6
     
-    reg [6:0] current_state, next_state;
+    reg [6:0] current_state, next_state, prev_state;
     
     // State register
     always @(posedge clkin) begin
-        if (reset)
-            current_state <= FORWARD;  // Start in FORWARD state, this is our default state
-        else
+        if (reset) begin
+            current_state <= IDLE;           // Start in IDLE state, this is our default state
+            prev_state    <= 7'b0000000;    // intentionally != IDLE so we detect "enter IDLE"
+        end else begin
+            prev_state    <= current_state;
             current_state <= next_state;
+        end
     end
     
     // Next state logic
@@ -55,6 +59,10 @@ module motors_fsm(
                     next_state = FORWARD;
             end
             
+            BACKWARD: begin
+                next_state = IDLE;  // Placeholder - adjust as needed
+            end
+            
             IDLE: begin
                 if (obstacle && timer_expire)
                     next_state = RIGHT;
@@ -71,6 +79,10 @@ module motors_fsm(
                     next_state = DEC;
             end
             
+            LEFT: begin
+                next_state = IDLE;  // Placeholder - adjust as needed
+            end
+            
             RIGHT: begin
                 if (~obstacle)
                     next_state = IDLE;
@@ -78,18 +90,20 @@ module motors_fsm(
                     next_state = RIGHT;
             end
             
-            default: next_state = FORWARD;
+            default: next_state = IDLE;
         endcase
     end
     
     // Output logic
     always @(*) begin
-        start_timer = ((current_state == RIGHT) && ~obstacle) |
-                      (current_state == DEC) && decelerated;
-        start_milli_timer = ((current_state == ACC) && obstacle) |
-                            ((current_state == FORWARD) && obstacle) |
-                            ((current_state == IDLE) && ~obstacle && timer_expire);
-        direction = current_state;
+        start_timer =       (current_state == IDLE && prev_state != IDLE) |   // entry pulse
+                            ((current_state == RIGHT) && ~obstacle) |
+                            ((next_state == IDLE) && (current_state != IDLE)) |
+                            ((current_state == DEC) && decelerated);
+        start_dec =         ((current_state == ACC) && obstacle) |
+                            ((current_state == FORWARD) && obstacle);
+        start_acc =         ((current_state == IDLE) && ~obstacle && timer_expire);
+        direction =         current_state;
     end
         
 endmodule
