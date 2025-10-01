@@ -1,6 +1,6 @@
 # 🚗 FPGA RC Car Project
 
-An FPGA-based remote-controlled car built with Verilog, featuring motor control, state machine logic, and real-time hardware verification.  
+An FPGA-based sensor-controlled car built with Verilog, featuring motor control, state machine logic, and real-time hardware verification.  
 Designed as a hands-on embedded systems project to explore hardware acceleration, digital design, and system integration.
 
 ---
@@ -21,7 +21,7 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 ---
 
 ## 🖼️ System Overview
-![System Block Diagram](images/system_block_diagram.pdf)
+![System Block Diagram](images/system_block_diagram.PNG)
 
 ---
 
@@ -38,11 +38,13 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 
 ├── /test # Testbenches & simulation outputs
 
-├── /docs # Detailed documentation
-
 ├── /images # Diagrams, schematics, photos
 
 └── README.md # This file
+
+## File Authors
+All work is original, with the exception of:
+- labCnt_clks.v (Author: Dustin Richmond, Assistant Professor, Department of Computer Science and Engineering, Baskin School of Engineering, UC Santa Cruz)
 
 ## 🧩 Lessons Learned
 - Importance of modular design for debugging
@@ -50,8 +52,6 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 - Writing reusable testbenches to validate FSM behavior
 
 ## 🔮 Future Work
-Improve autonomous navigation mode (via redesigning the FSM controlling the motors)
-
-Add two more HC-SR04 sensors to improve obstacle detection
-
-Optimize resource usage for larger FPGA boards
+- Improve autonomous navigation mode (via redesigning the FSM controlling the motors)
+- Add two more HC-SR04 sensors to improve obstacle detection
+- Optimize resource usage for larger FPGA boards
