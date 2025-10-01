@@ -9,6 +9,8 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 [![Watch the demo](images/rc_car.jpeg)]([https://youtu.be/your-demo-link](https://youtu.be/32earwF3ing?si=-XIod6FcqlqLWWrB))  
 *(Click to watch the car in action!)*
 
+[![Watch the demo](https://img.youtube.com/vi/32earwF3ing/0.jpg)](https://youtu.be/32earwF3ing?si=-XIod6FcqlqLWWrB)
+
 ---
 
 ## ✨ Features
