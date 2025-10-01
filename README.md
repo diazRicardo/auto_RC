@@ -21,7 +21,7 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 ---
 
 ## 🖼️ System Overview
-![System Block Diagram](images/system_block_diagram.png)
+![System Block Diagram](images/system_block_diagram.PNG)
 
 ---
 
