@@ -13,9 +13,8 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 
 ## ✨ Features
 - PWM-based motor speed control
-- Obstacle detection using [sensor type]
+- Obstacle detection using HC-SR04 ultrasonic sensor
 - Two finite state machines (FSMs) for control and navigation
-- UART/remote input for user commands
 - Real-time testing and debugging with FPGA hardware
 
 ---
