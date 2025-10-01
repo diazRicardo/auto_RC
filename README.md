@@ -35,9 +35,13 @@ Designed as a hands-on embedded systems project to explore hardware acceleration
 
 ## 📂 Repo Structure
 ├── /src # Verilog source files
+
 ├── /test # Testbenches & simulation outputs
+
 ├── /docs # Detailed documentation
+
 ├── /images # Diagrams, schematics, photos
+
 └── README.md # This file
 
 ## 🧩 Lessons Learned
