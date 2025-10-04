@@ -42,6 +42,18 @@ Motor FSM Diagram
 
 ---
 
+## ⚙️ Simulation - Waveform of Motor Control FSM
+Getting the motor control FSM to function correctly took a bit of real time debugging (programming and watching car operate), 
+but at a certain point the only way to fix some bugs was with a good ol' waveform of the FSM's outputs
+
+Here is a screenshot of the waveform analysis that helped me get the acceleration state running
+
+![Waveform](images/waveform.png)
+
+For those wondering, I had to make a mock module of the HC SR04 sensor to be able to simulate my machine
+
+---
+
 ## 📂 Repo Structure
 ├── /src # Verilog source files
 
