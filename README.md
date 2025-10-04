@@ -50,7 +50,7 @@ Here is a screenshot of the waveform analysis that helped me get the acceleratio
 
 ![Waveform](images/waveform.png)
 
-For those wondering, I had to make a mock module of the HC SR04 sensor to be able to simulate my machine
+For those wondering, I had to make a mock module of the HC SR04 sensor in order to give the FSM a simulated distance from obstacle input
 
 ---
 
